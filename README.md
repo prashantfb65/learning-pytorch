@@ -78,5 +78,7 @@ CUDA is a parallel computing platform and programming model that makes using a G
 Central to all neural networks in PyTorch is the `autograd` package.
 The autograd package provides automatic differentiation for all operations on Tensors. It is a define-by-run framework, which means that your backprop is defined by how your code is run, and that every single iteration can be different.
 
+`torch.Tensor` is the central class of the package. If you set its attribute `.requires_grad` as True, it starts to track all operations on it. When you finish your computation you can call `.backward()` and have all the gradients computed automatically. The gradient for this tensor will be accumulated into `.grad` attribute.
+
 Source credits: https://pytorch.org/
 
